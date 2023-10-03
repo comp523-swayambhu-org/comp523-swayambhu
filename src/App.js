@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <h1> Hello, World!</h1>
-      <Unity unityProvider={unityProvider} />
+      <Unity unityProvider={unityProvider} style={{ height: '960px' }} />
     </div>
   );
 }
