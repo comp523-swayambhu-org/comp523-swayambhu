@@ -15,6 +15,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+You may also need to run the following commands first:
+- `npm install react-unity-webgl`
+- `npm install @mui/material @emotion/react @emotion/styled`
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
