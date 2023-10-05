@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
-import Tutorial from './Tutorial.js'
+import Tutorial from './Tutorial.js';
+import Bar from './Bar.js';
 
 function App() {
   const { unityProvider, requestPointerLock } = useUnityContext({
@@ -11,23 +12,34 @@ function App() {
     codeUrl: 'build/webIntegration.wasm',
   });
 
-  const [onGame, setOnGame] = useState(false);
   const [tutOpen, setTutOpen] = useState(true);
+  const unityRef = useRef(null);
+
+  const openTutorial = () => {
+    setTutOpen(true);
+  }
 
   const closeTutorial = () => {
     setTutOpen(false);
-    setOnGame(true);
-    requestPointerLock();
   };
+
+  document.addEventListener('pointerlockerror', (event) => {
+    console.log('error locking pointer')
+  });
 
   return (
     <div>
-      <h1 id='title-bar'> Hello, World!</h1>
-      <Tutorial open={tutOpen} onClose={closeTutorial}/>
-      <Unity 
-        unityProvider={unityProvider}
-        style={{ height: '100%', width: '100%', visibility: onGame?'visible':'hidden' }}
-      />
+      <Bar openHelp={openTutorial} />
+      <Tutorial open={tutOpen} onClose={closeTutorial} />
+      <div 
+        ref={unityRef}
+        onClick={() => {requestPointerLock()}}
+      >
+        <Unity
+          unityProvider={unityProvider}
+          style={{ height: '100%', width: '100%' }}
+        />
+      </div>
     </div>
   );
 }
