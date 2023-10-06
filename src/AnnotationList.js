@@ -10,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Typography } from '@mui/material';
+import Annotation from './Annotation.js'
 
 const drawerWidth = 240;
 
@@ -34,29 +35,20 @@ export default function AnnotationList({open}) {
       </Toolbar>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <Annotation 
+          title="Annotation title" 
+          description={"this is an annotations description"}
+        />
+        <Divider />
+        <Annotation 
+          title="Second Annotation" 
+          description={"maybe we can fill these in by reading from a spreadsheet?"}
+        />
+        <Divider />
+        <Annotation
+          title="Videos?"
+          description={"for videos, we can pass in a boolean to the annotation for if theres a video and display a video if the boolean is true"}
+        />
       </List>
     </Drawer>
   );
