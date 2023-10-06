@@ -1,8 +1,10 @@
 import React, {useState, useRef} from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
+import { styled, useTheme } from '@mui/material/styles';
 import Tutorial from './Tutorial.js';
 import Bar from './Bar.js';
+import AnnotationList from './AnnotationList';
 
 function App() {
   const { unityProvider, requestPointerLock } = useUnityContext({
@@ -13,7 +15,9 @@ function App() {
   });
 
   const [tutOpen, setTutOpen] = useState(true);
+  const [listOpen, setListOpen] = useState(false);
   const unityRef = useRef(null);
+
 
   const openTutorial = () => {
     setTutOpen(true);
@@ -23,14 +27,27 @@ function App() {
     setTutOpen(false);
   };
 
+  const menuClick = () => {
+    setListOpen(!listOpen);
+  };
+
+  const closeList = () => {
+    setListOpen(false);
+  }
+
   document.addEventListener('pointerlockerror', (event) => {
     console.log('error locking pointer')
   });
 
   return (
     <div>
-      <Bar openHelp={openTutorial} />
+      <Bar 
+        openHelp={openTutorial} 
+        menuClick={menuClick}  
+        menuOpened={listOpen}
+      />
       <Tutorial open={tutOpen} onClose={closeTutorial} />
+      <AnnotationList open={listOpen} onClose={closeList} />
       <div 
         ref={unityRef}
         onClick={() => {requestPointerLock()}}
