@@ -18,7 +18,6 @@ function App() {
   const [listOpen, setListOpen] = useState(false);
   const unityRef = useRef(null);
 
-
   const openTutorial = () => {
     setTutOpen(true);
   }
