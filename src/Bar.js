@@ -4,11 +4,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import HelpIcon from '@mui/icons-material/Help';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { styled } from '@mui/material/styles';
 
+const drawerWidth = 250;
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
   })(({ theme, open }) => ({
@@ -21,8 +21,8 @@ const AppBar = styled(MuiAppBar, {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      width: `calc(100% - ${240}px)`,
-      marginRight: 240
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginRight: drawerWidth
     }),
   }));
 

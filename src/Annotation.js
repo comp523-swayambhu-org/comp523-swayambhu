@@ -4,8 +4,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import YoutubeEmbed from './YoutubEmbed';
 
-export default function Annotation({title, description}) {
+export default function Annotation({title, description, embedId=null}) {
   return (
     <div>
       <Accordion>
@@ -20,6 +21,11 @@ export default function Annotation({title, description}) {
           <Typography>
             {description}
           </Typography>
+          {
+            embedId && (
+              <YoutubeEmbed embedId={embedId} />
+            )
+          }
         </AccordionDetails>
       </Accordion>
     </div>
