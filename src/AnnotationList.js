@@ -3,16 +3,10 @@ import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { Typography } from '@mui/material';
 import Annotation from './Annotation.js'
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 export default function AnnotationList({open}) {
   return (
@@ -48,6 +42,7 @@ export default function AnnotationList({open}) {
         <Annotation
           title="Videos?"
           description={"for videos, we can pass in a boolean to the annotation for if theres a video and display a video if the boolean is true"}
+          embedId='vvN4FgqNXwE'
         />
       </List>
     </Drawer>
