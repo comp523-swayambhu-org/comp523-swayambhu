@@ -2,9 +2,9 @@ import React, {useState, useRef} from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { Typography } from '@mui/material';
-import Tutorial from './Tutorial.js';
-import Bar from './Bar.js';
-import AnnotationList from './AnnotationList';
+import Tutorial from './components/Tutorial.js';
+import Bar from './components/Bar.js';
+import AnnotationList from './components/AnnotationList';
 
 function App() {
   const { unityProvider, requestPointerLock } = useUnityContext({
@@ -14,16 +14,16 @@ function App() {
     codeUrl: 'build/webIntegration.wasm',
   });
 
-  const [tutOpen, setTutOpen] = useState(true);
+  const [tutorialIsOpen, setTutorialIsOpen] = useState(true);
   const [listOpen, setListOpen] = useState(false);
   const unityRef = useRef(null);
 
   const openTutorial = () => {
-    setTutOpen(true);
+    setTutorialIsOpen(true);
   }
 
   const closeTutorial = () => {
-    setTutOpen(false);
+    setTutorialIsOpen(false);
   };
 
   const menuClick = () => {
@@ -41,7 +41,7 @@ function App() {
         menuClick={menuClick}  
         menuOpened={listOpen}
       />
-      <Tutorial open={tutOpen} onClose={closeTutorial} />
+      <Tutorial open={tutorialIsOpen} onClose={closeTutorial} />
       <AnnotationList open={listOpen} />
       <Typography 
         variant='h6' 
