@@ -3,7 +3,7 @@ import Annotation from "./Annotation";
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import Papa from 'papaparse';
-import csvData from './annotations.csv'; // Import the CSV file
+import csvData from '../annotations.csv'; // Import the CSV file
 
 export default function CSVList() {
     const [parsedData, setParsedData] = useState([]);
