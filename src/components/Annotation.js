@@ -4,9 +4,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import YoutubeEmbed from './YoutubEmbed';
+import VideoLink from './VideoLink';
 
-export default function Annotation({title, description, embedId=null}) {
+export default function Annotation({num, title, description=null, url=null}) {
   return (
     <div>
       <Accordion>
@@ -15,15 +15,17 @@ export default function Annotation({title, description, embedId=null}) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>{title}</Typography>
+          <Typography>
+            {num + ": " + title}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
             {description}
           </Typography>
           {
-            embedId && (
-              <YoutubeEmbed embedId={embedId} />
+            url && (
+              <VideoLink url={url} />
             )
           }
         </AccordionDetails>
