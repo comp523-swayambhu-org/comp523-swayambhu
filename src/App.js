@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { Typography } from '@mui/material';
@@ -20,7 +20,7 @@ function App() {
 
   const openTutorial = () => {
     setTutorialIsOpen(true);
-  }
+  };
 
   const closeTutorial = () => {
     setTutorialIsOpen(false);
@@ -31,30 +31,32 @@ function App() {
   };
 
   document.addEventListener('pointerlockerror', (event) => {
-    console.log('error locking pointer')
+    console.log('error locking pointer');
   });
 
   return (
     <div>
-      <Bar 
-        openHelp={openTutorial} 
-        menuClick={menuClick}  
+      <Bar
+        openHelp={openTutorial}
+        menuClick={menuClick}
         menuOpened={listOpen}
       />
       <Tutorial open={tutorialIsOpen} onClose={closeTutorial} />
       <AnnotationList open={listOpen} />
-      <Typography 
-        variant='h6' 
-        style={{position: 'absolute', left: 0, bottom: 0}} 
+      <Typography
+        variant="h6"
+        style={{ position: 'absolute', left: 0, bottom: 0 }}
         color="white"
         mx={2}
         my={2}
       >
         Press 'ESC' twice to free cursor.
       </Typography>
-      <div 
+      <div
         ref={unityRef}
-        onClick={() => {requestPointerLock()}}
+        onClick={() => {
+          requestPointerLock();
+        }}
       >
         <Unity
           unityProvider={unityProvider}

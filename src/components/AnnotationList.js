@@ -7,7 +7,7 @@ import CSVList from './CSVList.js';
 
 const drawerWidth = 250;
 
-export default function AnnotationList({open}) {
+export default function AnnotationList({ open }) {
   return (
     <Drawer
       sx={{
@@ -22,12 +22,10 @@ export default function AnnotationList({open}) {
       open={open}
     >
       <Toolbar>
-        <Typography variant='h6'>
-          Annotations
-        </Typography>
+        <Typography variant="h6">Annotations</Typography>
       </Toolbar>
       <Divider />
-      <CSVList/>
+      <CSVList />
     </Drawer>
   );
 }
