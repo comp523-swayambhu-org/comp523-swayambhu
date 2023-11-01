@@ -1,18 +1,23 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Tutorial from './components/Tutorial.js';
 import Bar from './components/Bar.js';
 import AnnotationList from './components/AnnotationList';
 
 function App() {
-  const { unityProvider, requestPointerLock } = useUnityContext({
+  const { unityProvider, sendMessage } = useUnityContext({
     loaderUrl: 'build/webIntegration.loader.js',
     dataUrl: 'build/webIntegration.data',
     frameworkUrl: 'build/webIntegration.framework.js',
     codeUrl: 'build/webIntegration.wasm',
   });
+
+  const handleShowLocation = (num) => {
+    console.log(num);
+    sendMessage('0_annotation_camera', 'SetLocation', num);
+  };
 
   const [tutorialIsOpen, setTutorialIsOpen] = useState(true);
   const [listOpen, setListOpen] = useState(false);
@@ -42,7 +47,7 @@ function App() {
         menuOpened={listOpen}
       />
       <Tutorial open={tutorialIsOpen} onClose={closeTutorial} />
-      <AnnotationList open={listOpen} />
+      <AnnotationList open={listOpen} handleShowLocation={handleShowLocation} />
       <Typography
         variant="h6"
         style={{ position: 'absolute', left: 0, bottom: 0 }}
@@ -52,16 +57,18 @@ function App() {
       >
         Press 'ESC' twice to free cursor.
       </Typography>
-      <div
-        ref={unityRef}
-        onClick={() => {
-          requestPointerLock();
-        }}
-      >
+      <div ref={unityRef}>
         <Unity
           unityProvider={unityProvider}
           style={{ height: '100%', width: '100%' }}
         />
+        <Button
+          onClick={() => {
+            handleShowLocation(1);
+          }}
+        >
+          HELLO
+        </Button>
       </div>
     </div>
   );
