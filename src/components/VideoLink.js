@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const YoutubeEmbed = ({ embedId }) => (
+const VideoLink = ({ url }) => (
   <div className="video-responsive">
     <iframe
       width="97%"
-      src={`https://www.youtube.com/embed/${embedId}`}
+      src={url}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      title="Embedded youtube"
+      title="Video link"
     />
   </div>
 );
 
-YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired,
+VideoLink.propTypes = {
+  url: PropTypes.string.isRequired,
 };
 
-export default YoutubeEmbed;
+export default VideoLink;
