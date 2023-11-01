@@ -62,13 +62,6 @@ function App() {
           unityProvider={unityProvider}
           style={{ height: '100%', width: '100%' }}
         />
-        <Button
-          onClick={() => {
-            handleShowLocation(1);
-          }}
-        >
-          HELLO
-        </Button>
       </div>
     </div>
   );
