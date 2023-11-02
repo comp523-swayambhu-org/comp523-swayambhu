@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Papa from 'papaparse';
 import csvData from '../annotations.csv'; // Import the CSV file
 
-export default function CSVList() {
+export default function CSVList({ handleShowLocation }) {
   const [parsedData, setParsedData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,6 +40,7 @@ export default function CSVList() {
               title={row.title}
               description={row.description}
               url={row.url}
+              handleShowLocation={handleShowLocation}
             />
             <Divider />
           </div>
