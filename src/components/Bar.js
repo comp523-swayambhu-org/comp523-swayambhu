@@ -8,7 +8,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { styled } from '@mui/material/styles';
 
-const drawerWidth = 250;
+const drawerWidth = 300;
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({

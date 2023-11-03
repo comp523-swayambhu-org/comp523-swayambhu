@@ -19,6 +19,7 @@ You may also need to run the following commands first:
 - `npm install react-unity-webgl`
 - `npm install @mui/material @emotion/react @emotion/styled`
 - `npm install @mui/icons-material`
+- `npm install papaparse`
 
 ### `npm test`
 

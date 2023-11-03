@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
 import { Unity, useUnityContext } from 'react-unity-webgl';
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Tutorial from './components/Tutorial.js';
 import Bar from './components/Bar.js';
 import AnnotationList from './components/AnnotationList';
