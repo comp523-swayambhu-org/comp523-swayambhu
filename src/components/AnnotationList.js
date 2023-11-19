@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import { Typography } from '@mui/material';
 import CSVList from './CSVList.js';
 
-const drawerWidth = 250;
+const drawerWidth = 300;
 
 export default function AnnotationList({ open, handleShowLocation }) {
   return (
