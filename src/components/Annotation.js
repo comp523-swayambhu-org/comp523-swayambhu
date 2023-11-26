@@ -4,8 +4,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VideoLink from './VideoLink';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import { useUnityContext } from 'react-unity-webgl';
 
 export default function Annotation({
@@ -34,14 +35,16 @@ export default function Annotation({
         <AccordionDetails>
           <Typography>{description}</Typography>
           {url && <VideoLink url={url} />}
+          <Button
+            onClick={() => {
+              handleShowLocation(num, sendMessage);
+            }}
+            startIcon={<LocationOnIcon />}
+            style={{ marginTop: 5 }}
+          >
+            View
+          </Button>
         </AccordionDetails>
-        <Button
-          onClick={() => {
-            handleShowLocation(num, sendMessage);
-          }}
-        >
-          Show Location
-        </Button>
       </Accordion>
     </div>
   );
