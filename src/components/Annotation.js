@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VideoLink from './VideoLink';
-import { Button, IconButton } from '@mui/material';
+import { Button } from '@mui/material';
 import { useUnityContext } from 'react-unity-webgl';
 
 export default function Annotation({
