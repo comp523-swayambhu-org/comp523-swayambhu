@@ -6,8 +6,6 @@ test("annotation renders", () => {
 // render the component on virtual dom
 render(<Annotation num="1" title="Title" handleShowLocation={console.log('')} />);
 
-// var title = screen.getByRole("generic")
-
 //assert the expected result
 expect(screen.getByRole('button')).toHaveTextContent("1: Title")
 });
