@@ -1,17 +1,22 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import Annotation from "../components/Annotation.js";
 
-//test block
+// npm run test
 test("annotation renders", () => {
-// render the component on virtual dom
+
+const mockHandleClick = jest.fn()
 render(<Annotation 
     num="1" title="Title" 
     description="test annotation description"
-    handleShowLocation={console.log('')} />);
+    handleShowLocation={mockHandleClick} />)
+
+const titleButton = screen.getByRole('button')
 
 //assert the expected result
-expect(screen.getByRole('button')).toHaveTextContent("1: Title")
-
+expect(titleButton).toHaveTextContent("1: Title")
 expect(screen.getByText("test annotation description")).toBeInTheDocument()
 
+fireEvent.click(screen.getByText("View"))
+
+expect(mockHandleClick).toHaveBeenCalled()
 });
