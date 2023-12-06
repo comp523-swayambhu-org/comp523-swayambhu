@@ -21,7 +21,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "comp523-swayambhu -d build",
+    "deploy": "comp523-swayambhu -b GitHub-pages-deployment -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
