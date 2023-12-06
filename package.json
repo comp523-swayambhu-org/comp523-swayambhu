@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.12",
@@ -16,10 +17,11 @@
     "react-papaparse": "^4.4.0",
     "react-scripts": "5.0.1",
     "react-unity-webgl": "^9.4.3",
-    "web-vitals": "^2.1.4",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "comp523-swayambhu -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -42,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
+  },
+  "homepage": "https://nofrahm.github.io/comp523-swayambhu"
 }
