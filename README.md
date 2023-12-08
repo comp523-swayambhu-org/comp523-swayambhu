@@ -1,6 +1,7 @@
 # comp523-swayambhu
 # Project Description
 “Swayambhu Stories” is an innovative endeavor born from the collaboration between Professor Lauren Leve of UNC’s Religious Studies department and Baakhan Nyane Waa, a Nepali NGO comprised of cultural heritage enthusiasts and experts. This project addresses the pressing need to preserve the tangible and intangible heritage of Nepal, especially considering its vulnerability to earthquakes and the rapid pace of cultural change.
+Web Link: https://comp523-swayambhu-final-2-nofrahm.apps.cloudapps.unc.edu/
 
 # Import Necessary Files
 Before you can run this app, you must download the necessary unity files, which are too big for github. Add them to your local device by downloading them from this google drive folder: https://drive.google.com/drive/folders/1wU3rmkipwTaMVIFkOYj43t7WdZHx09U-?usp=drive_link. These files should go under the `public/build` folder, which contains all the unity files.
