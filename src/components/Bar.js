@@ -37,13 +37,21 @@ export default function ButtonAppBar({ openHelp, menuClick, menuOpened }) {
           size="large"
           edge="end"
           color="inherit"
-          aria-label="menu"
+          aria-label="help"
           sx={{ mr: 2 }}
-        >
-          <HelpIcon onClick={openHelp} />
+          onClick={openHelp} >
+          <HelpIcon />
         </IconButton>
-        {menuOpened === false && <MenuIcon onClick={menuClick} />}
-        {menuOpened && <ChevronRightIcon onClick={menuClick} />}
+        <IconButton
+          size="large"
+          edge="end"
+          color="inherit"
+          aria-label="menu"
+          onClick={menuClick}
+        >
+        {menuOpened === false && <MenuIcon />}
+        {menuOpened && <ChevronRightIcon />}
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

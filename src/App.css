@@ -36,25 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-#title-bar {
-  height: 7vh;
-  width: 100%;
-  position: absolute;
-  background-color: lightgray;
-}
-
-#tutorial-button {
-  width: 35%;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  position: inherit;
-}
-
-#title {
-  width: 60%;
-  background-color: darkgray;
-  padding: 10px;
-  float: right;
-}
