@@ -20,8 +20,7 @@ function App() {
   };
 
   const [tutorialIsOpen, setTutorialIsOpen] = useState(true);
-  const [listOpen, setListOpen] = useState(false);
-  const unityRef = useRef(null);
+  const [listIsOpen, setListIsOpen] = useState(false);
 
   const openTutorial = () => {
     setTutorialIsOpen(true);
@@ -32,10 +31,10 @@ function App() {
   };
 
   const menuClick = () => {
-    setListOpen(!listOpen);
+    setListIsOpen(!listIsOpen);
   };
 
-  document.addEventListener('pointerlockerror', (event) => {
+  document.addEventListener('pointerlockerror', () => {
     console.log('error locking pointer');
   });
 
@@ -44,10 +43,10 @@ function App() {
       <Bar
         openHelp={openTutorial}
         menuClick={menuClick}
-        menuOpened={listOpen}
+        menuOpened={listIsOpen}
       />
       <Tutorial open={tutorialIsOpen} onClose={closeTutorial} />
-      <AnnotationList open={listOpen} handleShowLocation={handleShowLocation} />
+      <AnnotationList open={listIsOpen} handleShowLocation={handleShowLocation} />
       <Typography
         variant="h6"
         style={{ position: 'absolute', left: 0, bottom: 0 }}
@@ -57,7 +56,7 @@ function App() {
       >
         Press 'ESC' twice to free cursor.
       </Typography>
-      <div ref={unityRef}>
+      <div>
         <Unity
           unityProvider={unityProvider}
           style={{ height: '100%', width: '100%' }}
