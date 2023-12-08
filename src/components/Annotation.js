@@ -16,12 +16,6 @@ export default function Annotation({
   url = null,
   handleShowLocation,
 }) {
-  const { sendMessage } = useUnityContext({
-    loaderUrl: 'build/webIntegration.loader.js',
-    dataUrl: 'build/webIntegration.data',
-    frameworkUrl: 'build/webIntegration.framework.js',
-    codeUrl: 'build/webIntegration.wasm',
-  });
   return (
     <div>
       <Accordion>
@@ -37,7 +31,7 @@ export default function Annotation({
           {url && <VideoLink url={url} />}
           <Button
             onClick={() => {
-              handleShowLocation(num, sendMessage);
+              handleShowLocation(num);
             }}
             startIcon={<LocationOnIcon />}
             style={{ marginTop: 5 }}
