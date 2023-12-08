@@ -2,6 +2,9 @@
 # Project Description
 “Swayambhu Stories” is an innovative endeavor born from the collaboration between Professor Lauren Leve of UNC’s Religious Studies department and Baakhan Nyane Waa, a Nepali NGO comprised of cultural heritage enthusiasts and experts. This project addresses the pressing need to preserve the tangible and intangible heritage of Nepal, especially considering its vulnerability to earthquakes and the rapid pace of cultural change.
 
+# Import Necessary Files
+Before you can run this app, you must download the necessary unity files, which are too big for github. Add them to your local device by downloading them from this google drive folder: https://drive.google.com/drive/folders/1wU3rmkipwTaMVIFkOYj43t7WdZHx09U-?usp=drive_link. These files should go under the `public/build` folder, which contains all the unity files.
+
 # How to Run This App
 If you would like to run this app locally, simply run `npm run start` in the terminal of the base directory. 
 
@@ -10,3 +13,9 @@ To edit the Unity project, go to the repository linked here: and download the fo
 <img width="754" alt="Screenshot 2023-11-19 at 3 25 13 PM" src="https://github.com/charlesma11/comp523-swayambhu/assets/73028566/a85ebb41-cd15-4006-b37c-ca9b8e71d5cf">
 
 Once open, you can edit the project like you would any other Unity project.
+
+# Deployment
+To theoretically deploy this app, use the same method as listed here: https://github.com/samrshi/swayambhu-523, but instead `rsync` the unity files into the `public/build` folder.
+
+# Other Notes
+If would like to bypass the process of downloading from google drive and this project remains active with many commits to the large unity files, I would highly recommend using git lfs and paying for a monthly subscription. This method would allow you to commit and deploy as needed without have the external storage system.
